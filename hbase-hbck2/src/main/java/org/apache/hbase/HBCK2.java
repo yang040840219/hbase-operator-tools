@@ -899,12 +899,14 @@ public class HBCK2 extends Configured implements org.apache.hadoop.util.Tool {
           showErrorMessage(command + " doesn't take any arguments");
           return EXIT_FAILURE;
         }
-        try (ClusterConnection connection = connect(); Hbck hbck = connection.getHbck()) {
-          checkFunctionSupported(connection, command);
-          hbck.fixMeta();
-          System.out.println("Server-side processing of fixMeta triggered.");
-        }
-        break;
+        showErrorMessage("Unsupported command: " + command);
+        return EXIT_FAILURE;
+//        try (ClusterConnection connection = connect(); Hbck hbck = connection.getHbck()) {
+//          checkFunctionSupported(connection, command);
+//          hbck.fixMeta();
+//          System.out.println("Server-side processing of fixMeta triggered.");
+//        }
+//        break;
 
       case ADD_MISSING_REGIONS_IN_META_FOR_TABLES:
         if(commands.length < 2){

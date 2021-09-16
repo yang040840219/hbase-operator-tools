@@ -118,6 +118,12 @@
     </mailingList>
   </mailingLists>
   <developers/>
+ <repositories>
+    <repository>
+      <id>cloudera</id>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
+</repositories>
   <!--TODO-->
   <properties>
     <maven.javadoc.skip>true</maven.javadoc.skip>
@@ -128,7 +134,8 @@
     <compileSource>1.8</compileSource>
     <java.min.version>${compileSource}</java.min.version>
     <maven.min.version>3.3.3</maven.min.version>
-    <hbase.version>2.1.6</hbase.version>
+    <!-- <hbase.version>2.1.6</hbase.version> -->
+    <hbase.version>2.1.0-cdh6.2.1</hbase.version>    
     <surefire.provider>surefire-junit47</surefire.provider>
     <test.output.tofile>true</test.output.tofile>
     <checkstyle.version>8.18</checkstyle.version>
